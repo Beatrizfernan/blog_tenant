@@ -1,0 +1,14 @@
+<!-- tenant_blog/person_form.html -->
+{% extends 'base.html' %}
+
+{% block title %}{% if form.instance.pk %}Editar Pessoa{% else %}Criar Pessoa{% endif %}{% endblock %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Editar Pessoa{% else %}Criar Pessoa{% endif %}</h1>
+    <form method="post" action="{% if form.instance.pk %}{% url 'person-update' form.instance.pk %}{% else %}{% url 'person-create' %}{% endif %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if form.instance.pk %}Salvar Alterações{% else %}Criar Pessoa{% endif %}</button>
+    </form>
+    <a href="{% url 'person-list' %}">Voltar para a Lista de Pessoas</a>
+{% endblock %}

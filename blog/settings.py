@@ -47,7 +47,7 @@ SHARED_APPS = (
 
 )
 
-TENANT_MODEL = "tenant_blog.Client" 
+TENANT_MODEL = "tenant_blog.Tenant" 
 MIDDLEWARE = [
     
     'django.middleware.security.SecurityMiddleware',

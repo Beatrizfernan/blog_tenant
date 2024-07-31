@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Site{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- Adicione outros links de CSS ou scripts aqui -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'person-list' %}">Lista de Pessoas</a></li>
+                <li><a href="{% url 'person-create' %}">Criar Pessoa</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        <!-- O conteúdo das páginas será inserido aqui -->
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Meu Site</p>
+        <!-- Adicione links de rodapé ou informações adicionais aqui -->
+    </footer>
+    
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <!-- Adicione outros scripts aqui -->
+</body>
+</html>
+
